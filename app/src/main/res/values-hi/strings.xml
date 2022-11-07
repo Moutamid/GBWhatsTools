@@ -1,0 +1,36 @@
+<resources>
+	<string name="message_number_empty">कृपया नंबर दर्ज करें</string>
+	<string name="message_number_error">नंबर सही ढंग से पंजीकृत नहीं है</string>
+	<string name="directChatInfo">अपने फोन पर किसी भी सहेजे नहीं गए नंबर पर व्हाट्सएप संदेश भेजें।</string>
+	<string name="directChatInfoNote">नोट: यह नंबर को स्टोर नहीं करता है</string>
+	<string name="enterMessage">संदेश दर्ज करें</string>
+	<string name="enterNumber">नंबर डालें</string>
+	<string name="sends">भेजना</string>
+	<string name="wapp">WhatsApp</string>
+	<string name="wbapp">डब्ल्यूए व्यापार</string>
+	<string name="exit_alert">बाहर निकलने के लिए फिर से दबाएं</string>
+	<string name="delete_error">कुछ फ़ाइलें हटाई नहीं जा सकीं</string>
+	<string name="delete_success">सफलतापूर्वक मिटाया गया</string>
+	<string name="save_error">कुछ फ़ाइलें सहेजी नहीं जा सकीं</string>
+	<string name="save_success">सभी स्थितियाँ सफलतापूर्वक सहेजी गई हैं</string>
+	<string name="delete_alert">क्या आप सुनिश्चित हैं , आप चयनित फ़ाइलों को हटाना चाहते हैं?</string>
+	<string name="yes">हाँ</string>
+	<string name="no">नहीं</string>
+	<string name="confirm">हटाने की पुष्टि करें....</string>
+	<string name="del_status">क्या आप सुनिश्चित हैं, आप इस स्थिति को हटाना चाहते हैं?</string>
+	<string name="saved_success">स्थिति सफलतापूर्वक सहेजी गई</string>
+	<string name="saved_status">सहेजी गई स्थिति</string>
+	<string name="select_all">सभी का चयन करे</string>
+	<string name="save">सहेजें</string>
+	<string name="delete">हटाएं</string>
+	<string name="photos">तस्वीरें</string>
+	<string name="videos">वीडियो</string>
+	<string name="share">साझा करना</string>
+	<string name="repost">पोस्ट</string>
+	<string name="status_saver">स्थिति सेवर</string>
+	<string name="save_all_whatsapp">सभी व्हाट्सएप, वा बिजनेस और डब्ल्यूए जीबी स्टेटस सेव करें</string>
+	<string name="whatsapp_web">व्हाट्सएप वेब</string>
+	<string name="saved_gallery">सहेजी गई गैलरी</string>
+	<string name="direct_chat">डायरेक्ट चैट</string>
+	<string name="send_whatsapp">संपर्कों को नंबर सहेजे बिना WhatsApp संदेश भेजें</string>
+</resources>

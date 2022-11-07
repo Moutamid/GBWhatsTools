@@ -1,0 +1,67 @@
+package com.gbversiongb.gb.Model;
+
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class StatusModel implements Parcelable {
+    private String filepath;
+    private boolean fileIsThere;
+
+    public boolean selected = false;
+
+    public boolean isSelected() {
+        return this.selected;
+    }
+
+    public void setSelected(boolean selected2) {
+        this.selected = selected2;
+    }
+
+    public StatusModel(String filepath, boolean fileIsThere) {
+        this.filepath = filepath;
+        this.fileIsThere = fileIsThere;
+    }
+
+    protected StatusModel(Parcel in) {
+        filepath = in.readString();
+    }
+
+    public static final Creator<StatusModel> CREATOR = new Creator<StatusModel>() {
+        @Override
+        public StatusModel createFromParcel(Parcel in) {
+            return new StatusModel(in);
+        }
+
+        @Override
+        public StatusModel[] newArray(int size) {
+            return new StatusModel[size];
+        }
+    };
+
+
+    public String getFilePath() {
+        return this.filepath;
+    }
+
+    public boolean getFileIsThere() {
+        return this.fileIsThere;
+    }
+
+
+    public void setFilePath(String paramString) {
+        this.filepath = paramString;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(filepath);
+    }
+
+
+}

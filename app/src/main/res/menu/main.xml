@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_save_all"
+        android:orderInCategory="100"
+        android:visible="false"
+        android:title="settings"
+        android:icon="@drawable/saveall"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_share"
+        android:orderInCategory="100"
+        android:title="settings"
+        android:icon="@drawable/share"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_help"
+        android:orderInCategory="100"
+        android:title="Help"
+        android:icon="@drawable/tut"
+        app:showAsAction="ifRoom" />
+</menu>

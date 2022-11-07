@@ -1,0 +1,36 @@
+<resources>
+	<string name="message_number_empty">الرجاء إدخال الرقم</string>
+	<string name="message_number_error">الرقم غير مسجل بشكل صحيح</string>
+	<string name="directChatInfo">أرسل رسائل WhatsApp إلى أي رقم غير محفوظ على هاتفك.</string>
+	<string name="directChatInfoNote">ملاحظة: لا تخزن الرقم</string>
+	<string name="enterMessage">أدخل رسالة</string>
+	<string name="enterNumber">أدخل رقم</string>
+	<string name="sends">يرسل</string>
+	<string name="wapp">ال WhatsApp</string>
+	<string name="wbapp">WA الأعمال</string>
+	<string name="exit_alert">اضغط مرة أخرى للخروج</string>
+	<string name="delete_error">تعذر حذف بعض الملفات</string>
+	<string name="delete_success">حذف بنجاح</string>
+	<string name="save_error">تعذر حفظ بعض الملفات</string>
+	<string name="save_success">تم حفظ جميع الحالات بنجاح</string>
+	<string name="delete_alert">هل أنت متأكد أنك تريد حذف الملفات المختارة؟</string>
+	<string name="yes">نعم</string>
+	<string name="no">رقم</string>
+	<string name="confirm">تأكيد الحذف ....</string>
+	<string name="del_status">هل أنت متأكد أنك تريد حذف هذه الحالة؟</string>
+	<string name="saved_success">تم حفظ الحالة بنجاح</string>
+	<string name="saved_status">الحالة المحفوظة</string>
+	<string name="select_all">اختر الكل</string>
+	<string name="save">يحفظ</string>
+	<string name="delete">حذف</string>
+	<string name="photos">الصور</string>
+	<string name="videos">أشرطة فيديو</string>
+	<string name="share">يشارك</string>
+	<string name="repost">إعادة نشر</string>
+	<string name="status_saver">حافظ الحالة</string>
+	<string name="save_all_whatsapp">احفظ جميع حالات WhatsApp و Wa Business و WA GB</string>
+	<string name="whatsapp_web">واتس اب ويب</string>
+	<string name="saved_gallery">المعرض المحفوظ</string>
+	<string name="direct_chat">الدردشة المباشرة</string>
+	<string name="send_whatsapp">أرسل رسائل WhatsApp دون حفظ الرقم في جهات الاتصال</string>
+</resources>

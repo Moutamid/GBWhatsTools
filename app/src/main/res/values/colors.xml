@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="spacerColor">#BDBDBD</color>
+
+    <color name="tab_txt_press">#ffffff</color>
+    <color name="tab_txt_unpress">#1DB06F</color>
+    <color name="popup_btn_color">#E6F6ED</color>
+
+    <color name="popup_bg">#fff</color>
+    <color name="btn_icon">#1DB06F</color>
+    <color name="btn_text">#1DB06F</color>
+    <color name="chkbox_color">#ffffff</color>
+    <color name="round_btn_bg">#80000000</color>
+    <color name="main_bg_color">#F9FBFD</color>
+    <color name="header_text_color">#1DB06F</color>
+    <color name="circle_pre">#1DB06F</color>
+    <color name="pre_icon_color">#fff</color>
+    <color name="pre_text_color">#1DB06F</color>
+    <color name="help_text">#1DB06F</color>
+
+    <color name="image_selected">#99004400</color>
+    <color name="image_not_selected">#00000000</color>
+    <color name="BGColor">#FFFFFF</color>
+    <color name="textColor">#000000</color>
+    <color name="black_overlay">#66000000</color>
+
+    <color name="colorPrimary">#021B2A</color>
+    <color name="colorPrimaryy">#783bf9</color>
+    <color name="gray_e2dedd">#ffe2dedd</color>
+    <color name="colorPrimaryDark">#283593</color>
+    <color name="colorFacebook">#3b5998</color>
+    <color name="colorWhatsApp">#25D366</color>
+    <color name="colorTwitter">#55acee</color>
+    <color name="cld">#1E5DFF</color>
+    <color name="colorAccent">#407806</color>
+    <color name="statusTextColor">#2B2A2A</color>
+    <color name="transparent">#00000000</color>
+    <color name="dark_grey">#DCDCDC</color>
+    <color name="green_50">#4F971C</color>
+    <color name="grey">#BFBFBF</color>
+    <color name="red">#fe4e4e</color>
+    <color name="holo_green">#82DF4F</color>
+    <color name="dark_grey_blue">#33475c</color>
+    <color name="blue">#6432BE</color>
+    <color name="black_transparent">#40000000</color>
+    <color name="splash_text">#7ffb00</color>
+    <color name="whatsapp_color">#3DE25C</color>
+
+    <color name="purple_500">#9C27B0</color>
+    <color name="deep_purple_500">#673AB7</color>
+    <color name="colorLightWhite">#f9f7f7</color>
+    <color name="colorBlack">#000000</color>
+    <color name="white_normal">#ffffffff</color>
+    <color name="darkGreen">#388E3C</color>
+    <color name="theme_purple">#7000E3</color>
+    <color name="red_ff5346">#ffff5346</color>
+
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

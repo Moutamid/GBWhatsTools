@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name" translatable="false">GB VERSION -222.0</string>
+    <string name="message_number_empty">Please enter number</string>
+    <string name="message_number_error">Number not registered correctly</string>
+    <string name="directChatInfo">Send WhatsApp messages to any unsaved number on your phone.</string>
+    <string name="directChatInfoNote">Note: it Does not store the number</string>
+    <string name="enterMessage">Enter Message </string>
+    <string name="enterNumber">Enter Number</string>
+    <string name="sends">SEND</string>
+
+
+    <string name="admob_app_id" translatable="false">ca-app-pub-4187292153162583~1834683666</string>
+    <string name="admob_banner_id" translatable="false">ca-app-pub-4187292153162583/8730890772</string>
+    <string name="admob_interstitial" translatable="false">ca-app-pub-4187292153162583/6104727431</string>
+    <string name="admob_openads" translatable="false">4ca-app-pub-4187292153162583/4791645764</string>
+
+    <string name="wapp">WhatsApp</string>
+    <string name="wbapp">WA Business</string>
+    <string name="exit_alert">Press back again to Exit</string>
+
+    <string name="english" translatable="false">English</string>
+    <string name="hindi" translatable="false">हिंदी</string>
+    <string name="arabic" translatable="false">العربية</string>
+
+
+    <string name="delete_error">Couldn\'t delete some files</string>
+    <string name="delete_success">Deleted successfully</string>
+    <string name="save_error">Couldn\'t save some files</string>
+    <string name="save_success">All Status Are Saved Successfully</string>
+    <string name="delete_alert">Are you sure , You want to delete selected files?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="confirm">Confirm Delete....</string>
+    <string name="del_status">Are you sure, You Want To Delete This Status?</string>
+    <string name="saved_success">Status saved successfully</string>
+
+    <string name="saved_status">Saved Status</string>
+    <string name="photos">Photos</string>
+    <string name="videos">Videos</string>
+    <string name="share">Share</string>
+    <string name="repost">Repost</string>
+
+    <string name="status_saver">Status Saver</string>
+    <string name="save_all_whatsapp">Save All WhatsApp, Wa Business and WA GB Statuses</string>
+    <string name="whatsapp_web">WhatsApp Web</string>
+    <string name="saved_gallery">Saved Gallery</string>
+    <string name="direct_chat">Direct Chat</string>
+    <string name="send_whatsapp">Send WhatsApp Messages without saving number to contacts</string>
+
+    <string name="tap_to_open" translatable="false">Tap to open</string>
+    <string name="whatsapp_business" translatable="false">Whatsapp Business</string>
+    <string name="whatsapp_gb" translatable="false">WhatsApp GB</string>
+    <string name="status_not_available" translatable="false">Status not available</string>
+    <string name="delete">Delete</string>
+    <string name="select_all">Select All</string>
+    <string name="save">Save</string>
+</resources>
