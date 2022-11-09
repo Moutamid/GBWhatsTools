@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.gbversiongb.gb">
+    package="com.gbversiongb.gb" >
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -19,7 +19,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:targetApi="q">
+        tools:targetApi="q" >
+        <activity
+            android:name=".activities.TextMagic"
+            android:exported="false"
+            android:theme="@style/AppFullScreen" />
         <activity
             android:name=".activities.Emotions"
             android:exported="false"
@@ -46,7 +50,7 @@
             android:theme="@style/AppFullScreen" />
         <activity
             android:name=".activities.SplashActivity"
-            android:theme="@style/AppFullSplash">
+            android:theme="@style/AppFullSplash" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -86,7 +90,7 @@
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
             android:exported="false"
-            android:grantUriPermissions="true">
+            android:grantUriPermissions="true" >
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />

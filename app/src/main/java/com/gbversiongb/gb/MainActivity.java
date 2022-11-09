@@ -40,6 +40,7 @@ import com.gbversiongb.gb.activities.BlankMessage;
 import com.gbversiongb.gb.activities.Captions;
 import com.gbversiongb.gb.activities.ChatDirect;
 import com.gbversiongb.gb.activities.Emotions;
+import com.gbversiongb.gb.activities.TextMagic;
 import com.gbversiongb.gb.activities.TextRepeat;
 import com.gbversiongb.gb.activities.TextToEmoji;
 import com.gbversiongb.gb.activities.WhatsAppWeb;
@@ -204,6 +205,20 @@ public class MainActivity extends AppCompatActivity {
                     ActivityCompat.requestPermissions(MainActivity.this, Utils.permissions, Utils.perRequest);
                 } else {
                     Intent i = new Intent(MainActivity.this, Emotions.class);
+                    i.putExtra("type", "WA");
+                    startActivity(i);
+                }
+            }
+        });
+        findViewById(R.id.textMagic).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                LoadFBInterstitial(MainActivity.this);
+                if (Utils.hasPermissions(MainActivity.this, Utils.permissions)) {
+                    ActivityCompat.requestPermissions(MainActivity.this, Utils.permissions, Utils.perRequest);
+                } else {
+                    Intent i = new Intent(MainActivity.this, TextMagic.class);
                     i.putExtra("type", "WA");
                     startActivity(i);
                 }

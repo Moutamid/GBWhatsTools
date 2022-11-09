@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".emotions.Emotions">
+    tools:context=".activities.TextMagic">
 
     <RelativeLayout
         android:id="@+id/topbar"
@@ -31,32 +31,37 @@
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="1dp"
             android:padding="1dp"
-            android:text="Emotions"
+            android:text="Text Magic"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textStyle="bold"
             android:visibility="visible" />
     </RelativeLayout>
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tablayout"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_60sdp"
+        android:layout_height="match_parent"
         android:layout_below="@+id/topbar"
-        app:tabGravity="center"
-        app:tabIndicatorColor="@color/transparent"
-        app:tabIndicatorHeight="0dp"
-        app:tabMode="scrollable"
-        app:tabPaddingEnd="0dp"
-        app:tabPaddingStart="0dp"
-        app:tabRippleColor="@color/transparent" />
+        android:orientation="vertical">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpager"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_below="@id/tablayout"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        <EditText
+            android:id="@+id/et_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/edtback"
+            android:hint="Enter Your Text Here"
+            android:maxLines="2"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_fonts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
 
 
 </RelativeLayout>

@@ -40,4 +40,5 @@
 	<string name="emotions">العواطف</string>
     <string name="repeatInfo">كرر النص بقدر ما تريد مع سطر جديد</string>
     <string name="best_captions_for_you">أفضل التسميات التوضيحية بالنسبة لك</string>
+    <string name="text_magic">تيكست ماجيك</string>
 </resources>

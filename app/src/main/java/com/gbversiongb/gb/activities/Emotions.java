@@ -1,7 +1,5 @@
 package com.gbversiongb.gb.activities;
 
-import static com.gbversiongb.gb.modules.AdController.LoadFBInterstitial;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -16,12 +14,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gbversiongb.gb.R;
+import com.google.android.material.tabs.TabLayout;
 import com.gbversiongb.gb.emotions.AngryFragment;
 import com.gbversiongb.gb.emotions.HappyFragment;
 import com.gbversiongb.gb.emotions.OtherFragment;
-import com.gbversiongb.gb.fragments.MyPhotos;
-import com.gbversiongb.gb.fragments.MyVideos;
-import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
