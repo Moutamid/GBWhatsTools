@@ -95,7 +95,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void initTasks() {
-        int SPLASH_TIMEOUT = 2;
+        int SPLASH_TIMEOUT = 5;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

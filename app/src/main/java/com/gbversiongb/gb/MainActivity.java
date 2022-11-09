@@ -1,5 +1,7 @@
 package com.gbversiongb.gb;
 
+import static android.content.ContentValues.TAG;
+
 import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
@@ -11,6 +13,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -23,13 +26,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.AudienceNetworkAds;
+import com.facebook.ads.InterstitialAd;
+import com.facebook.ads.InterstitialAdListener;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.gbversiongb.gb.activities.BlankMessage;
+import com.gbversiongb.gb.activities.Captions;
 import com.gbversiongb.gb.activities.ChatDirect;
+import com.gbversiongb.gb.activities.TextRepeat;
+import com.gbversiongb.gb.activities.TextToEmoji;
 import com.gbversiongb.gb.activities.WhatsAppWeb;
 import com.gbversiongb.gb.modules.AdController;
 import com.gbversiongb.gb.modules.Utils;
@@ -49,17 +60,18 @@ public class MainActivity extends AppCompatActivity {
     private FrameLayout adContainerView;
     public static final String MyPREFERENCES = "MyPrefs";
     SharedPreferences sharedpreferences;
-    private InterstitialAd mInterstitialAd;
-    AdRequest adRequest;
+    //private InterstitialAd mInterstitialAd;
+    //AdRequest adRequest;
     int AdCounter = 0;
     public static MainActivity ma;
     Dialog dialog, dialogLang;
+
+    private InterstitialAd finterstitialAd;
 
     private LinearLayout bannerBox;
     private com.facebook.ads.AdView faceBookBanner;
     private com.google.android.gms.ads.AdView googleBanner;
 
-    com.facebook.ads.InterstitialAd interstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +86,53 @@ public class MainActivity extends AppCompatActivity {
         bannerBox = (LinearLayout) findViewById(R.id.BannerBox);
 
         AdController.loadAdFifty(this, bannerBox);
+
+        AudienceNetworkAds.initialize(this);
+
+        finterstitialAd = new InterstitialAd(this, getResources().getString(R.string.fb_ad_inters));
+        InterstitialAdListener interstitialAdListener = new InterstitialAdListener() {
+            @Override
+            public void onInterstitialDisplayed(Ad ad) {
+                // Interstitial ad displayed callback
+                Log.e(TAG, "Interstitial ad displayed.");
+            }
+
+            @Override
+            public void onInterstitialDismissed(Ad ad) {
+                // Interstitial dismissed callback
+                Log.e(TAG, "Interstitial ad dismissed.");
+            }
+
+            @Override
+            public void onError(Ad ad, AdError adError) {
+                // Ad error callback
+                Log.e(TAG, "Interstitial ad failed to load: " + adError.getErrorMessage());
+            }
+
+            @Override
+            public void onAdLoaded(Ad ad) {
+                // Interstitial ad is loaded and ready to be displayed
+                Log.d(TAG, "Interstitial ad is loaded and ready to be displayed!");
+                // Show the ad
+                finterstitialAd.show();
+            }
+
+            @Override
+            public void onAdClicked(Ad ad) {
+                // Ad clicked callback
+                Log.d(TAG, "Interstitial ad clicked!");
+            }
+
+            @Override
+            public void onLoggingImpression(Ad ad) {
+                // Ad impression logged callback
+                Log.d(TAG, "Interstitial ad impression logged!");
+            }
+        };
+        finterstitialAd.loadAd(
+                finterstitialAd.buildLoadAdConfig()
+                        .withAdListener(interstitialAdListener)
+                        .build());
 
         if (Build.VERSION.SDK_INT >= 23) {
             checkPermissions(0);
@@ -102,6 +161,34 @@ public class MainActivity extends AppCompatActivity {
                     ActivityCompat.requestPermissions(MainActivity.this, Utils.permissions, Utils.perRequest);
                 } else {
                     Intent i = new Intent(MainActivity.this, StatusActivity.class);
+                    i.putExtra("type", "WA");
+                    startActivity(i);
+                }
+            }
+        });
+        findViewById(R.id.captions).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                LoadFBInterstitial(MainActivity.this);
+                if (Utils.hasPermissions(MainActivity.this, Utils.permissions)) {
+                    ActivityCompat.requestPermissions(MainActivity.this, Utils.permissions, Utils.perRequest);
+                } else {
+                    Intent i = new Intent(MainActivity.this, Captions.class);
+                    i.putExtra("type", "WA");
+                    startActivity(i);
+                }
+            }
+        });
+        findViewById(R.id.textEmoji).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                LoadFBInterstitial(MainActivity.this);
+                if (Utils.hasPermissions(MainActivity.this, Utils.permissions)) {
+                    ActivityCompat.requestPermissions(MainActivity.this, Utils.permissions, Utils.perRequest);
+                } else {
+                    Intent i = new Intent(MainActivity.this, TextToEmoji.class);
                     i.putExtra("type", "WA");
                     startActivity(i);
                 }
@@ -160,6 +247,22 @@ public class MainActivity extends AppCompatActivity {
 
                 LoadFBInterstitial(MainActivity.this);
                 Intent i = new Intent(MainActivity.this, ChatDirect.class);
+                startActivity(i);
+            }
+        });
+        findViewById(R.id.blankMsg).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LoadFBInterstitial(MainActivity.this);
+                Intent i = new Intent(MainActivity.this, BlankMessage.class);
+                startActivity(i);
+            }
+        });
+        findViewById(R.id.textRepeat).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LoadFBInterstitial(MainActivity.this);
+                Intent i = new Intent(MainActivity.this, TextRepeat.class);
                 startActivity(i);
             }
         });
@@ -225,7 +328,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     public Intent openTelegram() {
         Intent intent;
         try {
@@ -242,21 +344,44 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void showAdWithDelay() {
+        /**
+         * Here is an example for displaying the ad with delay;
+         * Please do not copy the Handler into your project
+         */
+        // Handler handler = new Handler();
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                // Check if interstitialAd has been loaded successfully
+                if(finterstitialAd == null || !finterstitialAd.isAdLoaded()) {
+                    return;
+                }
+                // Check if ad is already expired or invalidated, and do not show ad if that is the case. You will not get paid to show an invalidated ad.
+                if(finterstitialAd.isAdInvalidated()) {
+                    return;
+                }
+                // Show the ad
+                finterstitialAd.show();
+            }
+        }, 1000 * 60 * 2); // Show the ad after 2 minutes
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (finterstitialAd != null) {
+            finterstitialAd.destroy();
+        }
+        super.onDestroy();
+    }
+
     @Override
     public void onPause() {
         super.onPause();
     }
 
-
     @Override
     public void onResume() {
         super.onResume();
-    }
-
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
     }
 
     private boolean checkPermissions(int type) {

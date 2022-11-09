@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:background="@color/white">
     <RelativeLayout
-        android:background="#4CAF50"
+        android:background="@color/cld"
         android:id="@+id/topbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -18,13 +18,16 @@
             android:layout_centerVertical="true"
             android:src="@drawable/left"
             app:tint="@color/white_normal" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="1dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
             android:padding="1dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
             android:text="Chat Unsaved No."
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -103,6 +106,7 @@
                                 android:id="@+id/ccp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:background="@drawable/bg_grey"
                                 android:gravity="center" />
 
                             <EditText
@@ -110,6 +114,7 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
+                                android:layout_marginStart="4dp"
                                 android:background="@drawable/background_edit_text"
                                 android:hint="@string/enterNumber"
                                 android:inputType="phone" />
@@ -118,7 +123,7 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="0dp"
+                            android:layout_marginTop="10dp"
                             app:cardCornerRadius="7dp"
                             app:cardElevation="3dp"
                             app:cardUseCompatPadding="true">

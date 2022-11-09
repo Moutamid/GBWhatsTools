@@ -1,5 +1,7 @@
 package com.gbversiongb.gb.activities;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -7,6 +9,7 @@ import android.net.Uri;
 import android.os.Build.VERSION;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -88,13 +91,31 @@ public class ChatDirect extends AppCompatActivity {
         this.number = findViewById(R.id.input_text);
         this.CcP = findViewById(R.id.ccp);
         this.SendMessage = findViewById(R.id.go);
-        this.SendMessage.setOnClickListener(new btnSendMessageListner());
+        this.SendMessage.setOnClickListener(v -> {
+            String Num = CcP.getSelectedCountryCode() + number.getText().toString();
+            String messg = message.getText().toString();
+            if (number.getText().toString().isEmpty()){
+                Toast.makeText(this, "Please enter a number", Toast.LENGTH_SHORT).show();
+                number.setError("Required");
+            } else{
+                openWhatsApp(Num, messg);
+            }
+        });
         this.preference = PreferenceManager.getDefaultSharedPreferences(this);
         this.CcP.setCountryForNameCode(Utils.getCurrentLocale(this));
         this.CcP.setOnCountryChangeListener(new btnCcpListner());
         if (getIntent().getStringExtra("number") != null) {
             this.number.setText(getIntent().getStringExtra("number"));
         }
+    }
+
+    private void openWhatsApp(String smsNumber, String text) {
+        Log.d(TAG, "openWhatsApp: smsNumber: " + smsNumber);
+        Log.d(TAG, "openWhatsApp: text: " + text);
+
+        startActivity(new Intent(Intent.ACTION_VIEW,
+                Uri.parse(String.format("https://api.whatsapp.com/send?phone=%s&text=%s",
+                        smsNumber, text))));
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {

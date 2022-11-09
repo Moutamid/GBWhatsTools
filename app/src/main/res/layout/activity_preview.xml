@@ -89,7 +89,7 @@
                 android:layout_height="@dimen/_33sdp"
                 android:background="@drawable/ic_round_pre"
                 android:padding="@dimen/_9sdp"
-                android:src="@drawable/ic_delete"
+                android:src="@drawable/ic_delete2"
                 app:tint="@color/pre_icon_color" />
         </LinearLayout>
 

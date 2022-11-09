@@ -33,4 +33,11 @@
 	<string name="saved_gallery">सहेजी गई गैलरी</string>
 	<string name="direct_chat">डायरेक्ट चैट</string>
 	<string name="send_whatsapp">संपर्कों को नंबर सहेजे बिना WhatsApp संदेश भेजें</string>
+    <string name="text_to_emoji">इमोजी को टेक्स्ट करें</string>
+	<string name="text_repeat">टेक्स्ट रिपीट</string>
+	<string name="captions">कैप्शन</string>
+	<string name="blank_msg">खाली संदेश</string>
+	<string name="emotions">भावनाएँ</string>
+    <string name="repeatInfo">नई लाइन के साथ जितना चाहें उतना टेक्स्ट दोहराएं</string>
+    <string name="best_captions_for_you">आपके लिए सर्वश्रेष्ठ कैप्शन</string>
 </resources>
