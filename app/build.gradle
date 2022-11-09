@@ -16,7 +16,7 @@ android {
         versionCode 22
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
         multiDexEnabled true
-
+        setProperty("archivesBaseName", "GBWhatsTools-$versionName")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -64,5 +64,7 @@ def var = dependencies {
     implementation 'com.airbnb.android:lottie:3.0.3'
 
     implementation 'com.google.ads.mediation:facebook:6.8.0.0'
+    implementation 'com.facebook.android:audience-network-sdk:6.3.0'
+    implementation 'androidx.annotation:annotation:1.0.0'
 }
 var
