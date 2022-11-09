@@ -2174,6 +2174,10 @@
     <string name="share">Share</string>
     <string name="repost">Repost</string>
 
+    <string name="angry">Angry</string>
+    <string name="happy">Happy</string>
+    <string name="other">Other</string>
+
     <string name="status_saver">Status Saver</string>
     <string name="save_all_whatsapp">Save All WhatsApp, Wa Business and WA GB Statuses</string>
     <string name="whatsapp_web">WhatsApp Web</string>

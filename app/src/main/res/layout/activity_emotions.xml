@@ -4,38 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_bg_color">
+    tools:context=".activities.Emotions">
 
     <RelativeLayout
+        android:id="@+id/topbar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:background="@color/cld"
-        android:id="@+id/header">
+        android:layout_height="wrap_content"
+        android:background="@color/cld">
+
         <ImageView
-            android:id="@+id/backIV"
-            android:layout_width="40.0dip"
-            android:layout_height="40.0dip"
-            android:layout_alignParentStart="true"
-            android:layout_centerInParent="true"
-            app:srcCompat="@drawable/left"
-            app:tint="@color/white" />
+            android:id="@+id/imBack"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="1dp"
+            android:padding="1dp"
+            android:src="@drawable/left"
+            app:tint="@color/white_normal" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/saved_status"
-            android:textColor="@color/white"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:padding="1dp"
+            android:text="Emotions"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:textSize="@dimen/_16sdp"/>
-
+            android:visibility="visible" />
     </RelativeLayout>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tablayout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_60sdp"
-        android:layout_below="@+id/header"
+        android:layout_below="@+id/topbar"
         app:tabGravity="center"
         app:tabIndicatorColor="@color/transparent"
         app:tabIndicatorHeight="0dp"
@@ -46,18 +53,10 @@
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:layout_below="@id/tablayout"
-        android:layout_above="@+id/banner_container"/>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    <LinearLayout
-        android:id="@+id/bannerBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical" />
-    <include layout="@layout/banner_ad_lay"/>
 
 </RelativeLayout>

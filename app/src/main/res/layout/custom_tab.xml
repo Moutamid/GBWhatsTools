@@ -7,4 +7,5 @@
     android:textSize="@dimen/_12sdp"
     android:paddingBottom="@dimen/_5sdp"
     android:background="@drawable/press_tab"
+    android:backgroundTint="@color/cld"
     android:id="@+id/tab" />

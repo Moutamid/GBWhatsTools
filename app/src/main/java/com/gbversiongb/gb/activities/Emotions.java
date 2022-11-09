@@ -2,57 +2,51 @@ package com.gbversiongb.gb.activities;
 
 import static com.gbversiongb.gb.modules.AdController.LoadFBInterstitial;
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.gbversiongb.gb.R;
+import com.gbversiongb.gb.emotions.AngryFragment;
+import com.gbversiongb.gb.emotions.HappyFragment;
+import com.gbversiongb.gb.emotions.OtherFragment;
+import com.gbversiongb.gb.fragments.MyPhotos;
+import com.gbversiongb.gb.fragments.MyVideos;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.gbversiongb.gb.R;
-import com.gbversiongb.gb.fragments.MyPhotos;
-import com.gbversiongb.gb.fragments.MyVideos;
-import com.gbversiongb.gb.modules.AdController;
-import com.gbversiongb.gb.modules.Utils;
-
-public class MyStatusActivity extends AppCompatActivity {
-
-    ImageView backIV;
-
+public class Emotions extends AppCompatActivity {
+    ImageView backBtn;
     TabLayout tabLayout;
     ViewPager viewPager;
     String[] tabs;
-    LinearLayout bannerBox;
 
-    private com.facebook.ads.AdView faceBookBanner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Utils.loadLocale(this);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_status);
+        setContentView(R.layout.activity_emotions);
 
-
-        backIV = findViewById(R.id.backIV);
-        backIV.setOnClickListener(v -> finish());
+        backBtn = findViewById(R.id.imBack);
+        backBtn.setOnClickListener(view -> onBackPressed());
 
         viewPager = findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
-        tabs = new String[2];
-        tabs[0] = getResources().getString(R.string.photos);
-        tabs[1] = getResources().getString(R.string.videos);
+        tabs = new String[3];
+        tabs[0] = getResources().getString(R.string.angry);
+        tabs[1] = getResources().getString(R.string.happy);
+        tabs[2] = getResources().getString(R.string.other);
         tabLayout = findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(viewPager);
 
@@ -71,7 +65,6 @@ public class MyStatusActivity extends AppCompatActivity {
                 tabs.setCustomView(null);
                 tabs.setCustomView(getTabView(tab.getPosition()));
 
-                LoadFBInterstitial(MyStatusActivity.this);
             }
 
             @Override
@@ -86,15 +79,6 @@ public class MyStatusActivity extends AppCompatActivity {
 
             }
         });
-
-        bannerBox = findViewById(R.id.bannerBox);
-        AdController.loadAdFifty(this, bannerBox);
-    }
-
-    @Override
-    public void onBackPressed() {
-
-            super.onBackPressed();
     }
 
     private void setupTabIcons() {
@@ -112,7 +96,7 @@ public class MyStatusActivity extends AppCompatActivity {
     }
 
     public View getTabView(int pos) {
-        View v = LayoutInflater.from(MyStatusActivity.this).inflate(R.layout.custom_tab, null);
+        View v = LayoutInflater.from(Emotions.this).inflate(R.layout.custom_tab, null);
         TextView txt = v.findViewById(R.id.tab);
         txt.setText(tabs[pos]);
         txt.setTextColor(getResources().getColor(R.color.tab_txt_press));
@@ -124,7 +108,7 @@ public class MyStatusActivity extends AppCompatActivity {
     }
 
     public View getTabViewUn(int pos) {
-        View v = LayoutInflater.from(MyStatusActivity.this).inflate(R.layout.custom_tab, null);
+        View v = LayoutInflater.from(Emotions.this).inflate(R.layout.custom_tab, null);
         TextView txt = v.findViewById(R.id.tab);
         txt.setText(tabs[pos]);
         txt.setTextColor(getResources().getColor(R.color.cld));
@@ -139,8 +123,9 @@ public class MyStatusActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(
                 getSupportFragmentManager());
 
-        adapter.addFragment(new MyPhotos(), "Photos");
-        adapter.addFragment(new MyVideos(), "Videos");
+        adapter.addFragment(new AngryFragment(), "Angry");
+        adapter.addFragment(new HappyFragment(), "Happy");
+        adapter.addFragment(new OtherFragment(), "Other");
 
         viewPager.setAdapter(adapter);
     }
@@ -173,4 +158,5 @@ public class MyStatusActivity extends AppCompatActivity {
             return this.mFragmentTitleList.get(position);
         }
     }
+
 }

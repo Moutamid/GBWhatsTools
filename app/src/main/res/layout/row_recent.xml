@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="#1DB06F"
+            android:background="@color/cld"
             android:gravity="center"
             android:padding="2dp"
             android:visibility="gone">
