@@ -68,12 +68,11 @@ public class MainActivity extends AppCompatActivity {
     public static MainActivity ma;
     Dialog dialog, dialogLang;
 
-    private InterstitialAd finterstitialAd;
-
     private LinearLayout bannerBox;
     private com.facebook.ads.AdView faceBookBanner;
     private com.google.android.gms.ads.AdView googleBanner;
 
+    private InterstitialAd finterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 // Interstitial ad is loaded and ready to be displayed
                 Log.d(TAG, "Interstitial ad is loaded and ready to be displayed!");
                 // Show the ad
-                finterstitialAd.show();
+                showAdWithDelay();
             }
 
             @Override
@@ -393,7 +392,7 @@ public class MainActivity extends AppCompatActivity {
                 // Show the ad
                 finterstitialAd.show();
             }
-        }, 1000 * 60 * 2); // Show the ad after 2 minutes
+        }, 5000); // Show the ad after 5 minutes
     }
 
     @Override

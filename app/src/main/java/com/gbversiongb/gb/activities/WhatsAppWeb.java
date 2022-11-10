@@ -1,5 +1,7 @@
 package com.gbversiongb.gb.activities;
 
+import static android.content.ContentValues.TAG;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +11,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.text.format.DateFormat;
 import android.util.Base64;
 import android.util.Log;
@@ -34,6 +37,11 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Map;
 
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.AudienceNetworkAds;
+import com.facebook.ads.InterstitialAd;
+import com.facebook.ads.InterstitialAdListener;
 import com.gbversiongb.gb.MainActivity;
 import com.gbversiongb.gb.R;
 
@@ -44,6 +52,7 @@ public class WhatsAppWeb extends AppCompatActivity {
     private ImageView ivScreenshot;
     final Activity mActivity = this;
     WebView webView;
+    private InterstitialAd finterstitialAd;
 
 
     @RequiresApi(api = 17)
@@ -59,6 +68,54 @@ public class WhatsAppWeb extends AppCompatActivity {
         ImageView ivBack = (ImageView) findViewById(R.id.iv_back);
         TextView tvTitle = (TextView) findViewById(R.id.title);
         tvTitle.setText("WhatsApp Web");
+
+        AudienceNetworkAds.initialize(this);
+
+        finterstitialAd = new InterstitialAd(this, getResources().getString(R.string.fb_ad_inters));
+        InterstitialAdListener interstitialAdListener = new InterstitialAdListener() {
+            @Override
+            public void onInterstitialDisplayed(Ad ad) {
+                // Interstitial ad displayed callback
+                Log.e(TAG, "Interstitial ad displayed.");
+            }
+
+            @Override
+            public void onInterstitialDismissed(Ad ad) {
+                // Interstitial dismissed callback
+                Log.e(TAG, "Interstitial ad dismissed.");
+            }
+
+            @Override
+            public void onError(Ad ad, AdError adError) {
+                // Ad error callback
+                Log.e(TAG, "Interstitial ad failed to load: " + adError.getErrorMessage());
+            }
+
+            @Override
+            public void onAdLoaded(Ad ad) {
+                // Interstitial ad is loaded and ready to be displayed
+                Log.d(TAG, "Interstitial ad is loaded and ready to be displayed!");
+                // Show the ad
+                showAdWithDelay();
+            }
+
+            @Override
+            public void onAdClicked(Ad ad) {
+                // Ad clicked callback
+                Log.d(TAG, "Interstitial ad clicked!");
+            }
+
+            @Override
+            public void onLoggingImpression(Ad ad) {
+                // Ad impression logged callback
+                Log.d(TAG, "Interstitial ad impression logged!");
+            }
+        };
+        finterstitialAd.loadAd(
+                finterstitialAd.buildLoadAdConfig()
+                        .withAdListener(interstitialAdListener)
+                        .build());
+
         this.ivRefresh.setVisibility(View.VISIBLE);
         this.ivScreenshot.setVisibility(View.VISIBLE);
         if (Build.VERSION.SDK_INT >= 23) {
@@ -257,6 +314,27 @@ public class WhatsAppWeb extends AppCompatActivity {
         }
     }
 
+    private void showAdWithDelay() {
+        /**
+         * Here is an example for displaying the ad with delay;
+         * Please do not copy the Handler into your project
+         */
+        // Handler handler = new Handler();
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                // Check if interstitialAd has been loaded successfully
+                if(finterstitialAd == null || !finterstitialAd.isAdLoaded()) {
+                    return;
+                }
+                // Check if ad is already expired or invalidated, and do not show ad if that is the case. You will not get paid to show an invalidated ad.
+                if(finterstitialAd.isAdInvalidated()) {
+                    return;
+                }
+                // Show the ad
+                finterstitialAd.show();
+            }
+        }, 1000 * 60 * 5); // Show the ad after 5 minutes
+    }
 
     @Override
     public void onResume() {
@@ -273,6 +351,9 @@ public class WhatsAppWeb extends AppCompatActivity {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        if (finterstitialAd != null) {
+            finterstitialAd.destroy();
+        }
         this.webView.clearCache(true);
     }
 

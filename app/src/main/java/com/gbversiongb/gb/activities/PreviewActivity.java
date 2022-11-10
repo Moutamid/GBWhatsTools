@@ -1,11 +1,15 @@
 package com.gbversiongb.gb.activities;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -21,6 +25,11 @@ import java.io.File;
 import java.net.URLConnection;
 import java.util.ArrayList;
 
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.AudienceNetworkAds;
+import com.facebook.ads.InterstitialAd;
+import com.facebook.ads.InterstitialAdListener;
 import com.gbversiongb.gb.R;
 import com.gbversiongb.gb.modules.AdController;
 import com.gbversiongb.gb.modules.SharedPrefs;
@@ -40,11 +49,59 @@ public class PreviewActivity extends AppCompatActivity {
     ImageView backIV;
     private com.facebook.ads.AdView faceBookBanner;
     private LinearLayout bannerBox;
+    private InterstitialAd finterstitialAd;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preview);
+
+        AudienceNetworkAds.initialize(this);
+
+        finterstitialAd = new InterstitialAd(this, getResources().getString(R.string.fb_ad_inters));
+        InterstitialAdListener interstitialAdListener = new InterstitialAdListener() {
+            @Override
+            public void onInterstitialDisplayed(Ad ad) {
+                // Interstitial ad displayed callback
+                Log.e(TAG, "Interstitial ad displayed.");
+            }
+
+            @Override
+            public void onInterstitialDismissed(Ad ad) {
+                // Interstitial dismissed callback
+                Log.e(TAG, "Interstitial ad dismissed.");
+            }
+
+            @Override
+            public void onError(Ad ad, AdError adError) {
+                // Ad error callback
+                Log.e(TAG, "Interstitial ad failed to load: " + adError.getErrorMessage());
+            }
+
+            @Override
+            public void onAdLoaded(Ad ad) {
+                // Interstitial ad is loaded and ready to be displayed
+                Log.d(TAG, "Interstitial ad is loaded and ready to be displayed!");
+                // Show the ad
+                showAdWithDelay();
+            }
+
+            @Override
+            public void onAdClicked(Ad ad) {
+                // Ad clicked callback
+                Log.d(TAG, "Interstitial ad clicked!");
+            }
+
+            @Override
+            public void onLoggingImpression(Ad ad) {
+                // Ad impression logged callback
+                Log.d(TAG, "Interstitial ad impression logged!");
+            }
+        };
+        finterstitialAd.loadAd(
+                finterstitialAd.buildLoadAdConfig()
+                        .withAdListener(interstitialAdListener)
+                        .build());
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.black, this.getTheme()));
@@ -297,7 +354,35 @@ public class PreviewActivity extends AppCompatActivity {
         }
     };
 
+    private void showAdWithDelay() {
+        /**
+         * Here is an example for displaying the ad with delay;
+         * Please do not copy the Handler into your project
+         */
+        // Handler handler = new Handler();
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                // Check if interstitialAd has been loaded successfully
+                if(finterstitialAd == null || !finterstitialAd.isAdLoaded()) {
+                    return;
+                }
+                // Check if ad is already expired or invalidated, and do not show ad if that is the case. You will not get paid to show an invalidated ad.
+                if(finterstitialAd.isAdInvalidated()) {
+                    return;
+                }
+                // Show the ad
+                finterstitialAd.show();
+            }
+        }, 5000); // Show the ad after 5 minutes
+    }
 
+    @Override
+    protected void onDestroy() {
+        if (finterstitialAd != null) {
+            finterstitialAd.destroy();
+        }
+        super.onDestroy();
+    }
 
     public boolean isImageFile(String path) {
         String mimeType = URLConnection.guessContentTypeFromName(path);

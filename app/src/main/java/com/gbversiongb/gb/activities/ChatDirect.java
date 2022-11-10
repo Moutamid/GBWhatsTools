@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build.VERSION;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.MenuItem;
@@ -21,6 +22,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.AudienceNetworkAds;
+import com.facebook.ads.InterstitialAd;
+import com.facebook.ads.InterstitialAdListener;
 import com.hbb20.CountryCodePicker;
 import com.hbb20.CountryCodePicker.OnCountryChangeListener;
 
@@ -34,13 +40,14 @@ public class ChatDirect extends AppCompatActivity {
     CountryCodePicker CcP;
     private SharedPreferences preference;
     ImageView image;
-
+    private InterstitialAd finterstitialAd;
 
     private class btnSendMessageListner implements OnClickListener {
         public void onClick(View v) {
             String messege = ChatDirect.this.message.getText().toString();
             String number = ChatDirect.this.number.getText().toString();
             String mainNumber = ChatDirect.this.CcP.getSelectedCountryCode() + number;
+
             if (messege.length() == 0) {
                 Toast.makeText(ChatDirect.this, "Please enter message", Toast.LENGTH_SHORT).show();
             } else if (number.length() == 0) {
@@ -81,6 +88,53 @@ public class ChatDirect extends AppCompatActivity {
         Utils.loadLocale(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_chat_direct);
+
+        AudienceNetworkAds.initialize(this);
+
+        finterstitialAd = new InterstitialAd(this, getResources().getString(R.string.fb_ad_inters));
+        InterstitialAdListener interstitialAdListener = new InterstitialAdListener() {
+            @Override
+            public void onInterstitialDisplayed(Ad ad) {
+                // Interstitial ad displayed callback
+                Log.e(TAG, "Interstitial ad displayed.");
+            }
+
+            @Override
+            public void onInterstitialDismissed(Ad ad) {
+                // Interstitial dismissed callback
+                Log.e(TAG, "Interstitial ad dismissed.");
+            }
+
+            @Override
+            public void onError(Ad ad, AdError adError) {
+                // Ad error callback
+                Log.e(TAG, "Interstitial ad failed to load: " + adError.getErrorMessage());
+            }
+
+            @Override
+            public void onAdLoaded(Ad ad) {
+                // Interstitial ad is loaded and ready to be displayed
+                Log.d(TAG, "Interstitial ad is loaded and ready to be displayed!");
+                // Show the ad
+                showAdWithDelay();
+            }
+
+            @Override
+            public void onAdClicked(Ad ad) {
+                // Ad clicked callback
+                Log.d(TAG, "Interstitial ad clicked!");
+            }
+
+            @Override
+            public void onLoggingImpression(Ad ad) {
+                // Ad impression logged callback
+                Log.d(TAG, "Interstitial ad impression logged!");
+            }
+        };
+        finterstitialAd.loadAd(
+                finterstitialAd.buildLoadAdConfig()
+                        .withAdListener(interstitialAdListener)
+                        .build());
 
         if (!(ContextCompat.checkSelfPermission(this, "android.permission.CAMERA") == 0 && ContextCompat.checkSelfPermission(this, "android.permission.WRITE_EXTERNAL_STORAGE") == 0 && ContextCompat.checkSelfPermission(this, "android.permission.READ_EXTERNAL_STORAGE") == 0 && ContextCompat.checkSelfPermission(this, "android.permission.ACCESS_NETWORK_STATE") == 0 && ContextCompat.checkSelfPermission(this, "android.permission.SET_WALLPAPER") == 0 && ContextCompat.checkSelfPermission(this, "android.permission.INTERNET") == 0 && ContextCompat.checkSelfPermission(this, "android.permission.SYSTEM_ALERT_WINDOW") == 0) && VERSION.SDK_INT >= 23) {
             requestPermissions(new String[]{"android.permission.CAMERA", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE", "android.permission.ACCESS_NETWORK_STATE", "android.permission.SET_WALLPAPER", "android.permission.INTERNET", "android.permission.SYSTEM_ALERT_WINDOW"}, 0);
@@ -126,6 +180,36 @@ public class ChatDirect extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         finish();
+    }
+
+    private void showAdWithDelay() {
+        /**
+         * Here is an example for displaying the ad with delay;
+         * Please do not copy the Handler into your project
+         */
+        // Handler handler = new Handler();
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                // Check if interstitialAd has been loaded successfully
+                if(finterstitialAd == null || !finterstitialAd.isAdLoaded()) {
+                    return;
+                }
+                // Check if ad is already expired or invalidated, and do not show ad if that is the case. You will not get paid to show an invalidated ad.
+                if(finterstitialAd.isAdInvalidated()) {
+                    return;
+                }
+                // Show the ad
+                finterstitialAd.show();
+            }
+        }, 5000); // Show the ad after 5 minutes
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (finterstitialAd != null) {
+            finterstitialAd.destroy();
+        }
+        super.onDestroy();
     }
 
     protected void onPause() {

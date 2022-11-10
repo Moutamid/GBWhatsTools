@@ -1,15 +1,24 @@
 package com.gbversiongb.gb.activities;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.AudienceNetworkAds;
+import com.facebook.ads.InterstitialAd;
+import com.facebook.ads.InterstitialAdListener;
 import com.gbversiongb.gb.R;
 import com.gbversiongb.gb.textmagic.Font;
 import com.gbversiongb.gb.textmagic.FontAdapter;
@@ -23,6 +32,7 @@ public class TextMagic extends AppCompatActivity {
     ArrayList<Font> fontList;
     String fontText;
     RecyclerView rvStylishFonts;
+    private InterstitialAd finterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +45,53 @@ public class TextMagic extends AppCompatActivity {
 
         ImageView backBtn = findViewById(R.id.imBack);
         backBtn.setOnClickListener(view -> onBackPressed());
+
+        AudienceNetworkAds.initialize(this);
+
+        finterstitialAd = new InterstitialAd(this, getResources().getString(R.string.fb_ad_inters));
+        InterstitialAdListener interstitialAdListener = new InterstitialAdListener() {
+            @Override
+            public void onInterstitialDisplayed(Ad ad) {
+                // Interstitial ad displayed callback
+                Log.e(TAG, "Interstitial ad displayed.");
+            }
+
+            @Override
+            public void onInterstitialDismissed(Ad ad) {
+                // Interstitial dismissed callback
+                Log.e(TAG, "Interstitial ad dismissed.");
+            }
+
+            @Override
+            public void onError(Ad ad, AdError adError) {
+                // Ad error callback
+                Log.e(TAG, "Interstitial ad failed to load: " + adError.getErrorMessage());
+            }
+
+            @Override
+            public void onAdLoaded(Ad ad) {
+                // Interstitial ad is loaded and ready to be displayed
+                Log.d(TAG, "Interstitial ad is loaded and ready to be displayed!");
+                // Show the ad
+                showAdWithDelay();
+            }
+
+            @Override
+            public void onAdClicked(Ad ad) {
+                // Ad clicked callback
+                Log.d(TAG, "Interstitial ad clicked!");
+            }
+
+            @Override
+            public void onLoggingImpression(Ad ad) {
+                // Ad impression logged callback
+                Log.d(TAG, "Interstitial ad impression logged!");
+            }
+        };
+        finterstitialAd.loadAd(
+                finterstitialAd.buildLoadAdConfig()
+                        .withAdListener(interstitialAdListener)
+                        .build());
 
         this.etText.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable editable) {
@@ -82,5 +139,35 @@ public class TextMagic extends AppCompatActivity {
             this.rvStylishFonts.setAdapter(new FontAdapter(this, this.fontList, (adapterView, view, i, j) -> {
             }));
         }
+    }
+
+    private void showAdWithDelay() {
+        /**
+         * Here is an example for displaying the ad with delay;
+         * Please do not copy the Handler into your project
+         */
+        // Handler handler = new Handler();
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                // Check if interstitialAd has been loaded successfully
+                if(finterstitialAd == null || !finterstitialAd.isAdLoaded()) {
+                    return;
+                }
+                // Check if ad is already expired or invalidated, and do not show ad if that is the case. You will not get paid to show an invalidated ad.
+                if(finterstitialAd.isAdInvalidated()) {
+                    return;
+                }
+                // Show the ad
+                finterstitialAd.show();
+            }
+        }, 5000); // Show the ad after 5 minutes
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (finterstitialAd != null) {
+            finterstitialAd.destroy();
+        }
+        super.onDestroy();
     }
 }
