@@ -16,7 +16,7 @@ android {
         versionCode 22
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
         multiDexEnabled true
-        setProperty("archivesBaseName", "GBWhatsTools-$versionName")
+        setProperty("archivesBaseName", "GBPlusVersion-$versionName")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
