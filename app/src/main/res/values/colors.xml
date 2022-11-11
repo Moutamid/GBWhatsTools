@@ -5,7 +5,7 @@
     <color name="tab_txt_press">#ffffff</color>
     <color name="tab_txt_unpress">#1DB06F</color>
     <color name="popup_btn_color">#E6F6ED</color>
-
+    <color name="dd">#0e9794</color>
     <color name="popup_bg">#fff</color>
     <color name="btn_icon">#1DB06F</color>
     <color name="btn_text">#1DB06F</color>

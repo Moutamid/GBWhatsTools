@@ -67,7 +67,7 @@ public class WhatsAppWeb extends AppCompatActivity {
         this.ivScreenshot = (ImageView) findViewById(R.id.iv_screenshot);
         ImageView ivBack = (ImageView) findViewById(R.id.iv_back);
         TextView tvTitle = (TextView) findViewById(R.id.title);
-        tvTitle.setText("WhatsApp Web");
+        tvTitle.setText("WA Web");
 
         AudienceNetworkAds.initialize(this);
 
