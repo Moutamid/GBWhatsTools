@@ -13,7 +13,7 @@ android {
         applicationId "com.gbversiongb.gb"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 22
+        versionCode 1
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
         multiDexEnabled true
         setProperty("archivesBaseName", "GBPlusVersion-$versionName")
