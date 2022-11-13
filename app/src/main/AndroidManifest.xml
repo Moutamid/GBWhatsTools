@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.gbversiongb.gb" >
+    package="com.moutamid.gb" >
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -21,36 +21,37 @@
         android:theme="@style/AppTheme"
         tools:targetApi="q" >
         <activity
-            android:name=".activities.TextMagic"
+            android:name="com.moutamid.gb.activities.TextMagic"
             android:exported="false"
             android:theme="@style/AppFullScreen" />
         <activity
-            android:name=".activities.Emotions"
+            android:name="com.moutamid.gb.activities.Emotions"
             android:exported="false"
             android:theme="@style/AppFullScreen" />
         <activity
-            android:name=".activities.TextToEmoji"
+            android:name="com.moutamid.gb.activities.TextToEmoji"
             android:exported="false"
             android:theme="@style/AppFullScreen" />
         <activity
-            android:name=".activities.CaptionsList"
+            android:name="com.moutamid.gb.activities.CaptionsList"
             android:exported="false"
             android:theme="@style/AppFullScreen" />
         <activity
-            android:name=".activities.Captions"
+            android:name="com.moutamid.gb.activities.Captions"
             android:exported="false"
             android:theme="@style/AppFullScreen" />
         <activity
-            android:name=".activities.TextRepeat"
+            android:name="com.moutamid.gb.activities.TextRepeat"
             android:exported="false"
             android:theme="@style/AppFullScreen" />
         <activity
-            android:name=".activities.BlankMessage"
+            android:name="com.moutamid.gb.activities.BlankMessage"
             android:exported="false"
             android:theme="@style/AppFullScreen" />
         <activity
-            android:name=".activities.SplashActivity"
-            android:theme="@style/AppFullSplash" >
+            android:name="com.moutamid.gb.activities.SplashActivity"
+            android:theme="@style/AppFullSplash"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -58,31 +59,31 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.StatusActivity"
+            android:name="com.moutamid.gb.activities.StatusActivity"
             android:hardwareAccelerated="true"
             android:theme="@style/AppFullScreen" />
         <activity
-            android:name=".activities.MyStatusActivity"
+            android:name="com.moutamid.gb.activities.MyStatusActivity"
             android:hardwareAccelerated="true"
             android:theme="@style/AppFullScreen" />
         <activity
-            android:name=".activities.PreviewActivity"
+            android:name="com.moutamid.gb.activities.PreviewActivity"
             android:hardwareAccelerated="true"
             android:theme="@style/AppFullScreen" />
         <activity
-            android:name=".activities.ChatDirect"
+            android:name="com.moutamid.gb.activities.ChatDirect"
             android:hardwareAccelerated="true"
             android:theme="@style/AppFullScreen" />
         <activity
-            android:name=".activities.WhatsAppWeb"
+            android:name="com.moutamid.gb.activities.WhatsAppWeb"
             android:hardwareAccelerated="true"
             android:theme="@style/AppFullScreen" />
         <activity
-            android:name=".activities.VideoPlayerActivity"
+            android:name="com.moutamid.gb.activities.VideoPlayerActivity"
             android:hardwareAccelerated="true"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.moutamid.gb.MainActivity"
             android:hardwareAccelerated="true"
             android:theme="@style/AppTheme.NoActionBar" />
 
