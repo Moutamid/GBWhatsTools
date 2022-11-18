@@ -224,6 +224,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.privacyPolicyBtn).setOnClickListener(v -> {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("https://docs.google.com/document/d/e/2PACX-1vRk6fLAx0rqmEp_JfNX4Fwqm0WYyHkOQGtF249IMkTUF80s_gKg53DkpI3_VqJ2NEidi1CDKjx1AL-o/pub"));
+            startActivity(browserIntent);
+        });
+        
         langAlert();
 
         findViewById(R.id.changeLng).setOnClickListener(new View.OnClickListener() {

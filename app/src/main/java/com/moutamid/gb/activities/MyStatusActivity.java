@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -46,6 +47,7 @@ public class MyStatusActivity extends AppCompatActivity {
     private InterstitialAd finterstitialAd;
 
     private com.facebook.ads.AdView faceBookBanner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Utils.loadLocale(this);
@@ -149,7 +151,7 @@ public class MyStatusActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-            super.onBackPressed();
+        super.onBackPressed();
     }
 
     private void setupTabIcons() {
@@ -238,11 +240,11 @@ public class MyStatusActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             public void run() {
                 // Check if interstitialAd has been loaded successfully
-                if(finterstitialAd == null || !finterstitialAd.isAdLoaded()) {
+                if (finterstitialAd == null || !finterstitialAd.isAdLoaded()) {
                     return;
                 }
                 // Check if ad is already expired or invalidated, and do not show ad if that is the case. You will not get paid to show an invalidated ad.
-                if(finterstitialAd.isAdInvalidated()) {
+                if (finterstitialAd.isAdInvalidated()) {
                     return;
                 }
                 // Show the ad
