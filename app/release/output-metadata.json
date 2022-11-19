@@ -4,16 +4,16 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.gbversiongb.gb",
+  "applicationId": "com.moutamid.gb",
   "variantName": "release",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 22,
-      "versionName": "0.0.3",
-      "outputFile": "GBPlusVersion-0.0.3-release.apk"
+      "versionCode": 3,
+      "versionName": "1.3",
+      "outputFile": "GBPlusVersion-1.3-release.apk"
     }
   ],
   "elementType": "File"
