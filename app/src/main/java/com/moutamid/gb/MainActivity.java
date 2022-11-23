@@ -28,6 +28,8 @@ import androidx.core.content.ContextCompat;
 
 import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
 import com.facebook.ads.AudienceNetworkAds;
 import com.facebook.ads.InterstitialAd;
 import com.facebook.ads.InterstitialAdListener;
@@ -85,11 +87,18 @@ public class MainActivity extends AppCompatActivity {
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
         adsManager ads = new adsManager(MainActivity.this, true);
-        bannerBox = (LinearLayout) findViewById(R.id.BannerBox);
+        /*bannerBox = (LinearLayout) findViewById(R.id.BannerBox);
 
-        AdController.loadAdFifty(this, bannerBox);
-
+        AdController.loadAdFifty(this, bannerBox);*/
         AudienceNetworkAds.initialize(this);
+
+        faceBookBanner = new AdView(this, getString(R.string.fb_ad_banner), AdSize.BANNER_HEIGHT_50);
+
+        LinearLayout adContainer = (LinearLayout) findViewById(R.id.banner_container);
+
+        adContainer.addView(faceBookBanner);
+
+        faceBookBanner.loadAd();
 
         finterstitialAd = new InterstitialAd(this, getResources().getString(R.string.fb_ad_inters));
         InterstitialAdListener interstitialAdListener = new InterstitialAdListener() {

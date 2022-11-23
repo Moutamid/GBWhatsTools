@@ -53,9 +53,19 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/heading"
+        android:layout_above="@id/banner_container"
         android:layout_marginTop="10dp"
         android:footerDividersEnabled="false"
         android:numColumns="2"
         android:padding="1dp" />
+
+    <LinearLayout
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 </RelativeLayout>

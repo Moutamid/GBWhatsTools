@@ -66,9 +66,6 @@ public class StatusActivity extends AppCompatActivity implements StatusAdapter.O
         typeSS = findViewById(R.id.typeSS);
         recyclerView = findViewById(R.id.recylerViewImage);
 
-        bannerBox = findViewById(R.id.bannerBox);
-        AdController.loadAdFifty(this, bannerBox);
-
         AudienceNetworkAds.initialize(this);
 
         finterstitialAd = new InterstitialAd(this, getResources().getString(R.string.fb_ad_inters));

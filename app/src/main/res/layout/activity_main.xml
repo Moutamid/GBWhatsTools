@@ -267,13 +267,6 @@
                         android:id="@+id/BannerBox"
                         android:orientation="vertical"/>
 
-                    <LinearLayout
-                        android:visibility="gone"
-                        android:id="@+id/banner_container"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:orientation="horizontal" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -657,7 +650,12 @@
             </androidx.cardview.widget.CardView>
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
-    <include
-        android:id="@+id/banner"
-        layout="@layout/banner_ad_lay"/>
+    <LinearLayout
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 </RelativeLayout>

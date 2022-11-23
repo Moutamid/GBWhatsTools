@@ -48,16 +48,16 @@
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tablayout"
-        android:layout_above="@+id/banner_container"/>
+        android:layout_above="@+id/banner_container"
+        android:layout_below="@id/tablayout" />
 
     <LinearLayout
-        android:id="@+id/bannerBox"
+        android:id="@+id/banner_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical" />
-    <include layout="@layout/banner_ad_lay"/>
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 </RelativeLayout>

@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -24,6 +25,8 @@ import androidx.core.content.ContextCompat;
 
 import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
 import com.facebook.ads.AudienceNetworkAds;
 import com.facebook.ads.InterstitialAd;
 import com.facebook.ads.InterstitialAdListener;
@@ -39,6 +42,7 @@ public class ChatDirect extends AppCompatActivity {
     RelativeLayout SendMessage;
     CountryCodePicker CcP;
     private SharedPreferences preference;
+    private com.facebook.ads.AdView faceBookBanner;
     ImageView image;
     private InterstitialAd finterstitialAd;
 
@@ -90,6 +94,14 @@ public class ChatDirect extends AppCompatActivity {
         setContentView(R.layout.activity_main_chat_direct);
 
         AudienceNetworkAds.initialize(this);
+
+        faceBookBanner = new AdView(this, getString(R.string.fb_ad_banner), AdSize.BANNER_HEIGHT_50);
+
+        LinearLayout adContainer = (LinearLayout) findViewById(R.id.banner_container);
+
+        adContainer.addView(faceBookBanner);
+
+        faceBookBanner.loadAd();
 
         finterstitialAd = new InterstitialAd(this, getResources().getString(R.string.fb_ad_inters));
         InterstitialAdListener interstitialAdListener = new InterstitialAdListener() {

@@ -22,6 +22,8 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
 import com.facebook.ads.AudienceNetworkAds;
 import com.facebook.ads.InterstitialAd;
 import com.facebook.ads.InterstitialAdListener;
@@ -55,6 +57,14 @@ public class MyStatusActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_status);
 
         AudienceNetworkAds.initialize(this);
+
+        faceBookBanner = new AdView(this, getString(R.string.fb_ad_banner), AdSize.BANNER_HEIGHT_50);
+
+        LinearLayout adContainer = (LinearLayout) findViewById(R.id.banner_container);
+
+        adContainer.addView(faceBookBanner);
+
+        faceBookBanner.loadAd();
 
         finterstitialAd = new InterstitialAd(this, getResources().getString(R.string.fb_ad_inters));
         InterstitialAdListener interstitialAdListener = new InterstitialAdListener() {
@@ -143,9 +153,9 @@ public class MyStatusActivity extends AppCompatActivity {
 
             }
         });
-
+/*
         bannerBox = findViewById(R.id.bannerBox);
-        AdController.loadAdFifty(this, bannerBox);
+        AdController.loadAdFifty(this, bannerBox);*/
     }
 
     @Override

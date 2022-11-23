@@ -12,9 +12,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
 import com.facebook.ads.AudienceNetworkAds;
 import com.facebook.ads.InterstitialAd;
 import com.facebook.ads.InterstitialAdListener;
@@ -26,12 +29,21 @@ public class Captions extends AppCompatActivity {
     GridView simpleGrid;
     ImageView backBtn;
     private InterstitialAd finterstitialAd;
+    private com.facebook.ads.AdView faceBookBanner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_captions);
 
         AudienceNetworkAds.initialize(this);
+
+        faceBookBanner = new AdView(this, getString(R.string.fb_ad_banner), AdSize.BANNER_HEIGHT_50);
+
+        LinearLayout adContainer = (LinearLayout) findViewById(R.id.banner_container);
+
+        adContainer.addView(faceBookBanner);
+
+        faceBookBanner.loadAd();
 
         finterstitialAd = new InterstitialAd(this, getResources().getString(R.string.fb_ad_inters));
         InterstitialAdListener interstitialAdListener = new InterstitialAdListener() {

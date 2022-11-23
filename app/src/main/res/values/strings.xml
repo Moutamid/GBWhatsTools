@@ -2147,6 +2147,7 @@
     <string name="admob_openads" translatable="false">4ca-app-pub-4187292153162583/4791645764</string>
 
     <string name="fb_ad_inters" translatable="false">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
+    <string name="fb_ad_banner" translatable="false">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
 
     <string name="wapp">WhatsApp</string>
     <string name="wbapp">WA Business</string>
