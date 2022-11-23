@@ -11,9 +11,9 @@
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 3,
-      "versionName": "1.3",
-      "outputFile": "GBPlusVersion-1.3-release.apk"
+      "versionCode": 4,
+      "versionName": "1.4",
+      "outputFile": "GBPlusVersion-1.4-release.apk"
     }
   ],
   "elementType": "File"
