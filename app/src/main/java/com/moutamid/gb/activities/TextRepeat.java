@@ -101,20 +101,24 @@ public class TextRepeat extends AppCompatActivity {
         backBtn.setOnClickListener(view -> onBackPressed());
 
         repeat.setOnClickListener(v -> {
-            if (newLineSwitch.isChecked()){
-                String s = "";
-                int t = Integer.parseInt(num.getText().toString());
-                for (int i = 0; i < t; i++) {
-                    s = s + text.getText().toString() + "\n";
-                }
-                result.setText(s);
+            if (num.getText().toString().isEmpty() || text.getText().toString().isEmpty()){
+                Toast.makeText(this, "Please Enter The Required Data", Toast.LENGTH_SHORT).show();
             } else {
-                String s = "";
-                int t = Integer.parseInt(num.getText().toString());
-                for (int i = 0; i < t; i++) {
-                    s = s + text.getText().toString() + " ";
+                if (newLineSwitch.isChecked()) {
+                    String s = "";
+                    int t = Integer.parseInt(num.getText().toString());
+                    for (int i = 0; i < t; i++) {
+                        s = s + text.getText().toString() + "\n";
+                    }
+                    result.setText(s);
+                } else {
+                    String s = "";
+                    int t = Integer.parseInt(num.getText().toString());
+                    for (int i = 0; i < t; i++) {
+                        s = s + text.getText().toString() + " ";
+                    }
+                    result.setText(s);
                 }
-                result.setText(s);
             }
         });
 

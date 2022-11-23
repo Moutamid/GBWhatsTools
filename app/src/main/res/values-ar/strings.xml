@@ -6,7 +6,7 @@
 	<string name="enterMessage">أدخل رسالة</string>
 	<string name="enterNumber">أدخل رقم</string>
 	<string name="sends">يرسل</string>
-	<string name="wapp">ال WhatsApp</string>
+	<string name="wapp">ال WA</string>
 	<string name="wbapp">WA الأعمال</string>
 	<string name="exit_alert">اضغط مرة أخرى للخروج</string>
 	<string name="delete_error">تعذر حذف بعض الملفات</string>
@@ -28,11 +28,11 @@
 	<string name="share">يشارك</string>
 	<string name="repost">إعادة نشر</string>
 	<string name="status_saver">حافظ الحالة</string>
-	<string name="save_all_whatsapp">احفظ جميع حالات WhatsApp و Wa Business و WA GB</string>
+	<string name="save_all_whatsapp">احفظ جميع حالات WA و Wa Business و WA GB</string>
 	<string name="whatsapp_web">واتس اب ويب</string>
 	<string name="saved_gallery">المعرض المحفوظ</string>
 	<string name="direct_chat">الدردشة المباشرة</string>
-	<string name="send_whatsapp">أرسل رسائل WhatsApp دون حفظ الرقم في جهات الاتصال</string>
+	<string name="send_whatsapp">أرسل رسائل Whats دون حفظ الرقم في جهات الاتصال</string>
 	<string name="text_to_emoji">نص إلى Emoji</string>
 	<string name="text_repeat">كرر النص</string>
 	<string name="captions">شرح</string>
