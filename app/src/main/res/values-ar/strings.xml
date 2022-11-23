@@ -1,7 +1,7 @@
 <resources>
 	<string name="message_number_empty">الرجاء إدخال الرقم</string>
 	<string name="message_number_error">الرقم غير مسجل بشكل صحيح</string>
-	<string name="directChatInfo">أرسل رسائل WhatsApp إلى أي رقم غير محفوظ على هاتفك.</string>
+	<string name="directChatInfo">أرسل رسائل Whats  إلى أي رقم غير محفوظ على هاتفك.</string>
 	<string name="directChatInfoNote">ملاحظة: لا تخزن الرقم</string>
 	<string name="enterMessage">أدخل رسالة</string>
 	<string name="enterNumber">أدخل رقم</string>

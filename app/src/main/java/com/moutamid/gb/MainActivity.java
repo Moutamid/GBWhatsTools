@@ -36,6 +36,7 @@ import com.facebook.ads.InterstitialAdListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.moutamid.gb.R;
 import com.moutamid.gb.activities.BlankMessage;
 import com.moutamid.gb.activities.Captions;
 import com.moutamid.gb.activities.ChatDirect;

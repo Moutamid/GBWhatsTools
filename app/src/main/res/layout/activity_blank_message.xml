@@ -203,14 +203,14 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/copyBtn"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="15dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardBackgroundColor="@color/colorPrimary"
                 app:cardCornerRadius="26dp"
@@ -219,12 +219,13 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_margin="10dp"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="26dp"
-                        android:layout_height="26dp"
-                        android:layout_margin="15dp"
+                        android:layout_width="32sp"
+                        android:layout_height="32sp"
                         android:src="@drawable/ic_copy"
                         app:tint="@color/white" />
 
@@ -233,6 +234,44 @@
                         android:layout_height="match_parent"
                         android:gravity="center|start"
                         android:text="Copy Text"
+                        android:textColor="@color/white"
+                        android:visibility="gone"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/shareBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardCornerRadius="26dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="32sp"
+                        android:layout_height="32sp"
+                        android:src="@drawable/ic_share"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|start"
+                        android:text="Share"
+                        android:visibility="gone"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -243,9 +282,9 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/deleteText"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="15dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardBackgroundColor="@color/colorPrimary"
                 app:cardCornerRadius="26dp"
@@ -254,20 +293,22 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_margin="10dp"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="26dp"
-                        android:layout_height="26dp"
-                        android:layout_margin="15dp"
-                        app:tint="@color/white"
-                        android:src="@drawable/ic_delete2" />
+                        android:layout_width="32sp"
+                        android:layout_height="32sp"
+                        android:src="@drawable/ic_delete2"
+                        app:tint="@color/white" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center|start"
                         android:text="Delete"
+                        android:visibility="gone"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         android:textStyle="bold" />

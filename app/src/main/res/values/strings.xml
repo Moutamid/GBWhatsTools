@@ -2,7 +2,7 @@
     <string name="app_name" translatable="false">GB Plus VERSION</string>
     <string name="message_number_empty">Please enter number</string>
     <string name="message_number_error">Number not registered correctly</string>
-    <string name="directChatInfo">Send WhatsApp messages to any unsaved number on your phone.</string>
+    <string name="directChatInfo">Send Whats messages to any unsaved number on your phone.</string>
     <string name="directChatInfoNote">Note: it Does not store the number</string>
     <string name="enterMessage">Enter Message </string>
     <string name="enterNumber">Enter Number</string>

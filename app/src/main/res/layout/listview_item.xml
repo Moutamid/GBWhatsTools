@@ -83,7 +83,7 @@
                     android:layout_height="35dp"
                     android:padding="8dp"
                     app:tint="@color/cld"
-                    android:src="@drawable/whatsapp" />
+                    android:src="@drawable/ic_share" />
             </LinearLayout>
         </RelativeLayout>
     </RelativeLayout>

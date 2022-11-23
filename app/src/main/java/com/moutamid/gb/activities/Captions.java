@@ -22,7 +22,7 @@ import com.moutamid.gb.R;
 import com.moutamid.gb.adapters.CustomAdapter;
 
 public class Captions extends AppCompatActivity {
-    String[] logos = new String[]{"Best", "Clever", "Cool", "Cute", "Fitness", "Funny", "Life", "Love", "Motivation", "Sad", "Savage", "Selfie", "Song"};
+    String[] logos = new String[]{"Best", "Clever", "Cool", "Cute", "Fitness", "Funny", "Life", "Love", "Motivation", "Sad", "Selfie", "Song"};
     GridView simpleGrid;
     ImageView backBtn;
     private InterstitialAd finterstitialAd;

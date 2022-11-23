@@ -5,8 +5,10 @@ import static android.content.ContentValues.TAG;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.ActivityNotFoundException;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -20,6 +22,7 @@ import com.facebook.ads.AdError;
 import com.facebook.ads.AudienceNetworkAds;
 import com.facebook.ads.InterstitialAd;
 import com.facebook.ads.InterstitialAdListener;
+import com.google.android.material.card.MaterialCardView;
 import com.moutamid.gb.R;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
@@ -27,7 +30,7 @@ public class BlankMessage extends AppCompatActivity {
 
     TextView five, ten, tewnty, fifty, hund, blank;
     SwitchMaterial newLineSwitch;
-    CardView copyBtn, deleteBtn;
+    CardView copyBtn, deleteBtn, shareBtn;
     ImageView backBtn;
 
     private InterstitialAd finterstitialAd;
@@ -93,6 +96,7 @@ public class BlankMessage extends AppCompatActivity {
         newLineSwitch = findViewById(R.id.newLineSwitch);
         copyBtn = findViewById(R.id.copyBtn);
         deleteBtn = findViewById(R.id.deleteText);
+        shareBtn = findViewById(R.id.shareBtn);
         backBtn = findViewById(R.id.imBack);
         backBtn.setOnClickListener(view -> onBackPressed());
 
@@ -113,6 +117,17 @@ public class BlankMessage extends AppCompatActivity {
                 }
             }
 
+        });
+
+        shareBtn.setOnClickListener(v -> {
+            Intent whatsappIntent = new Intent("android.intent.action.SEND");
+            whatsappIntent.setType("text/plain");
+            whatsappIntent.putExtra("android.intent.extra.TEXT", blank.getText().toString());
+            try {
+                startActivity(whatsappIntent);
+            } catch (ActivityNotFoundException e) {
+                Toast.makeText(BlankMessage.this, "Some problems", Toast.LENGTH_SHORT).show();
+            }
         });
 
         deleteBtn.setOnClickListener(v -> {

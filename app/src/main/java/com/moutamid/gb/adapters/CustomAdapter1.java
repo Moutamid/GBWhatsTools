@@ -39,30 +39,33 @@ public class CustomAdapter1 extends BaseAdapter {
         return 0;
     }
 
-    @SuppressLint("ViewHolder")
+    @SuppressLint({"ViewHolder", "WrongConstant"})
     public View getView(final int i, View view, ViewGroup viewGroup) {
         view = this.inflter.inflate(R.layout.listview_item, null);
         ((TextView) view.findViewById(R.id.textView)).setText(this.items[i]);
         ImageView icon2 = view.findViewById(R.id.share_button);
-        view.findViewById(R.id.copy_button).setOnClickListener(new OnClickListener() {
-            @SuppressLint({"WrongConstant"})
-            public void onClick(View view) {
-                String str = CustomAdapter1.this.items[i];
-                ((ClipboardManager) CustomAdapter1.this.context.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("Copied Text", str));
-                Toast.makeText(CustomAdapter1.this.context, "Copied To Clipboard", Toast.LENGTH_SHORT).show();
-            }
+        view.findViewById(R.id.copy_button).setOnClickListener(view12 -> {
+            String str = CustomAdapter1.this.items[i];
+            ((ClipboardManager) CustomAdapter1.this.context.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("Copied Text", str));
+            Toast.makeText(CustomAdapter1.this.context, "Copied To Clipboard", Toast.LENGTH_SHORT).show();
         });
-        icon2.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                String str = CustomAdapter1.this.items[i];
-                Intent intent = new Intent("android.intent.action.SEND");
-                intent.setType("text/plain");
-                intent.setPackage("com.whatsapp");
-                intent.putExtra("android.intent.extra.TEXT", str);
-                if (intent.resolveActivity(CustomAdapter1.this.context.getPackageManager()) != null) {
-                    CustomAdapter1.this.context.startActivity(intent);
-                }
-            }
+        icon2.setOnClickListener(view1 -> {
+            String str = CustomAdapter1.this.items[i];
+
+            Intent intent = new Intent();
+            intent.setAction("android.intent.action.SEND");
+            intent.setFlags(335544320);
+            intent.setType("text/plain");
+            intent.putExtra("android.intent.extra.TEXT", str);
+            CustomAdapter1.this.context.startActivity(intent);
+
+            /*Intent intent = new Intent("android.intent.action.SEND");
+            intent.setType("text/plain");
+            intent.setPackage("com.whatsapp");
+            intent.putExtra("android.intent.extra.TEXT", str);
+            if (intent.resolveActivity(CustomAdapter1.this.context.getPackageManager()) != null) {
+
+            }*/
         });
         return view;
     }

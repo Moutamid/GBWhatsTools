@@ -127,11 +127,11 @@ public class StatusActivity extends AppCompatActivity implements StatusAdapter.O
             if (extras != null) {
                 type = extras.getString("type");
                 if (type.equals("WA")) {
-                    typeSS.setText("WhatsApp");
+                    typeSS.setText("Whats");
                 } else if (type.equals("WAGB")) {
-                    typeSS.setText("WhatsApp GB");
+                    typeSS.setText("Whats GB");
                 } else if (type.equals("WABS")) {
-                    typeSS.setText("WhatsApp Business");
+                    typeSS.setText("Whats Business");
                 }
             }
         } catch (Exception e) {

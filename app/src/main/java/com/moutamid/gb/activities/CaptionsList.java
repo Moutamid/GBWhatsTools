@@ -111,12 +111,14 @@ public class CaptionsList extends AppCompatActivity {
         } else if (this.position == 9) {
             this.items = getResources().getStringArray(R.array.s_sad);
         } else if (this.position == 10) {
-            this.items = getResources().getStringArray(R.array.s_savage);
-        } else if (this.position == 11) {
             this.items = getResources().getStringArray(R.array.s_selfie);
-        } else if (this.position == 12) {
+        } else if (this.position == 11) {
             this.items = getResources().getStringArray(R.array.s_song);
         }
+
+        /*else if (this.position == 10) {
+            this.items = getResources().getStringArray(R.array.s_savage);
+        }*/
 
         this.listViews = findViewById(R.id.simpleListView);
         this.listViews.setAdapter(new CustomAdapter1(getApplicationContext(), this.items));

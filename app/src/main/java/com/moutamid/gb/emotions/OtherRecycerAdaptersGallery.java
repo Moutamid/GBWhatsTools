@@ -2,6 +2,8 @@ package com.moutamid.gb.emotions;
 
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -16,6 +18,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.moutamid.gb.R;
+import com.moutamid.gb.adapters.CustomAdapter1;
 
 class OtherRecycerAdaptersGallery extends RecyclerView.Adapter<OtherRecycerAdaptersGallery.MyViewHolder> {
     private String[] OtherAscii;
@@ -49,7 +52,11 @@ class OtherRecycerAdaptersGallery extends RecyclerView.Adapter<OtherRecycerAdapt
         holder.WhatsApp.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 String FACE = OtherRecycerAdaptersGallery.this.OtherAscii[position];
-                Intent whatsappIntent = new Intent("android.intent.action.SEND");
+
+                ((ClipboardManager) OtherRecycerAdaptersGallery.this.context.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("Copied Text", FACE));
+                Toast.makeText(OtherRecycerAdaptersGallery.this.context, "Copied To Clipboard", Toast.LENGTH_SHORT).show();
+
+                /*Intent whatsappIntent = new Intent("android.intent.action.SEND");
                 whatsappIntent.setType("text/plain");
                 whatsappIntent.setPackage("com.whatsapp");
                 whatsappIntent.putExtra("android.intent.extra.TEXT", FACE);
@@ -57,7 +64,7 @@ class OtherRecycerAdaptersGallery extends RecyclerView.Adapter<OtherRecycerAdapt
                     OtherRecycerAdaptersGallery.this.context.startActivity(whatsappIntent);
                 } catch (ActivityNotFoundException e) {
                     Toast.makeText(OtherRecycerAdaptersGallery.this.context, "Whatsapp have not been installed.", Toast.LENGTH_SHORT).show();
-                }
+                }*/
             }
         });
 

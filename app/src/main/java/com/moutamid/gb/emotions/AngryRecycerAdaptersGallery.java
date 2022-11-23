@@ -2,6 +2,8 @@ package com.moutamid.gb.emotions;
 
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -46,19 +48,21 @@ class AngryRecycerAdaptersGallery extends RecyclerView.Adapter<AngryRecycerAdapt
     @SuppressLint({"LongLogTag"})
     public void onBindViewHolder(MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         holder.TextFaces.setText(this.AngryAscii[position]);
-        holder.WhatsApp.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                String FACE = AngryRecycerAdaptersGallery.this.AngryAscii[position];
-                Intent whatsappIntent = new Intent("android.intent.action.SEND");
-                whatsappIntent.setType("text/plain");
-                whatsappIntent.setPackage("com.whatsapp");
-                whatsappIntent.putExtra("android.intent.extra.TEXT", FACE);
-                try {
-                    AngryRecycerAdaptersGallery.this.context.startActivity(whatsappIntent);
-                } catch (ActivityNotFoundException e) {
-                    Toast.makeText(AngryRecycerAdaptersGallery.this.context, "Whatsapp have not been installed.", Toast.LENGTH_SHORT).show();
-                }
-            }
+        holder.WhatsApp.setOnClickListener(v -> {
+            String FACE = AngryRecycerAdaptersGallery.this.AngryAscii[position];
+
+            ((ClipboardManager) AngryRecycerAdaptersGallery.this.context.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("Copied Text", FACE));
+            Toast.makeText(AngryRecycerAdaptersGallery.this.context, "Copied To Clipboard", Toast.LENGTH_SHORT).show();
+
+            /*Intent whatsappIntent = new Intent("android.intent.action.SEND");
+            whatsappIntent.setType("text/plain");
+            whatsappIntent.setPackage("com.whatsapp");
+            whatsappIntent.putExtra("android.intent.extra.TEXT", FACE);
+            try {
+                AngryRecycerAdaptersGallery.this.context.startActivity(whatsappIntent);
+            } catch (ActivityNotFoundException e) {
+                Toast.makeText(AngryRecycerAdaptersGallery.this.context, "Whatsapp have not been installed.", Toast.LENGTH_SHORT).show();
+            }*/
         });
 
 

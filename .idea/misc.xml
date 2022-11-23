@@ -12,13 +12,13 @@
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.203" />
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/drawable/ic_delete.xml" value="0.1" />
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/drawable/ic_round_pre.xml" value="0.203" />
-        <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/activity_blank_message.xml" value="0.2" />
+        <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/activity_blank_message.xml" value="0.33" />
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/activity_captions.xml" value="0.1953125" />
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/activity_captions_list.xml" value="0.209375" />
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/activity_emotions.xml" value="0.209375" />
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/activity_listfacis.xml" value="0.209375" />
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/activity_main_chat_direct.xml" value="0.22" />
+        <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/activity_main_chat_direct.xml" value="0.33" />
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/activity_my_status.xml" value="0.209375" />
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/activity_preview.xml" value="0.209375" />
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/activity_splash.xml" value="0.2" />
@@ -37,7 +37,8 @@
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/fragment_angry.xml" value="0.209375" />
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/fragment_status_pics.xml" value="0.209375" />
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/gridview.xml" value="0.209375" />
-        <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/listview_item.xml" value="0.22" />
+        <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/lang_lay.xml" value="0.209375" />
+        <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/listview_item.xml" value="0.5" />
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/loader_lay.xml" value="0.209375" />
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/popup_lay.xml" value="0.209375" />
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/preview_list_item.xml" value="0.209375" />
@@ -46,83 +47,6 @@
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/layout/row_recent.xml" value="0.33" />
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/mipmap-anydpi-v26/ic_logo.xml" value="0.203" />
         <entry key="..\:/BridgeLinxProject/GBWhatsTools/app/src/main/res/mipmap-anydpi-v26/ic_logo_round.xml" value="0.203" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/arrow_right.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/background_edit_text.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/bg_grey.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/btm_btn.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/btn_purple.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/checked.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/chevron_right.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/circle.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/dlt.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/edtback.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/et_back.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/home_btn.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_baseline_chat_24.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_baseline_people_24.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_baseline_perm_identity_24.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_circle_btn.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_copy.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_delete2.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_delete_black_24dp.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_delete_white.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_gallery.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_history.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_home_work_24.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_image.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_play.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_save_black_24dp.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_save_white.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_send_white.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_share.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_share_black_24dp.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_share_white.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/ic_statussaver.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/left.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/popup_bg.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/rectangle_white.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/refresh.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/savedp.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/selectall.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/share.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/top_shadow.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/tut.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/drawable/whatsapp_logo_black.xml" value="0.1" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/activity_blank_message.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/activity_captions.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/activity_captions_list.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/activity_emotions.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/activity_listfacis.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/activity_my_status.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/activity_preview.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/activity_splash.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/activity_text_magic.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/activity_text_repeat.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/activity_text_to_emoji.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/activity_video_player_.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/activity_whatsapp_web.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/banner_ad_container.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/banner_ad_lay.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/custom_tab.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/empty_lay.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/font_item_layout.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/fragment_angry.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/fragment_happy.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/fragment_other.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/fragment_status_pics.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/gridview.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/lang_lay.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/listview_item.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/loader_lay.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/my_status_fragment.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/popup_lay.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/preview_list_item.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/recent_fragment.xml" value="0.2" />
-        <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/GBWhatsTools/app/src/main/res/layout/row_my_status.xml" value="0.2" />
       </map>
     </option>
   </component>
